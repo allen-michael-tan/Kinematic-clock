@@ -41,7 +41,9 @@ Before each clocks were put together, some components of the clock had to be pre
 
 #### Coating of 3D printed parts
 
-The material used for all 3D printed parts was PLA. This material has the 
+![Spray coating]()
+
+The material used for all 3D printed parts was PLA. This material has the tendency to disintigrate after a period of time, so a clear coat was applied on all the printed parts to increase their longevity. 
 
 #### Hour hand assembly
 
@@ -71,7 +73,7 @@ Lastly, on the other side of the minute hand where the bamboo skewer was inserte
 
 ![Clock assembly 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%201.jpg)
 
-
+The colour theme of the clock was black and white - black board and clock hands, white clock face. As the clock bodies were printed in different colours, white vinyl stickers were cut out and pasted onto the outside face of the clock body (blue arrow). 
 
 *****
 
@@ -79,7 +81,7 @@ Lastly, on the other side of the minute hand where the bamboo skewer was inserte
 
 ![Clock assembly 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%202.jpg)
 
-
+Next, two continuous servo motors were installed onto the clock body as shown above and secured using 4 screws.
 
 *****
 
@@ -87,7 +89,7 @@ Lastly, on the other side of the minute hand where the bamboo skewer was inserte
 
 ![Clock assembly 3](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%203.jpeg)
 
-
+Before inserting the hour hand, the shaft hub was lubricated using WD 40 to reduce friction between the hour hand shaft and the clock body.
 
 *****
 
@@ -95,7 +97,7 @@ Lastly, on the other side of the minute hand where the bamboo skewer was inserte
 
 ![Clock assembly 4](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%204.jpg)
 
-
+The hour hand was inserted as shown (blue arrow). 
 
 *****
 
@@ -103,7 +105,9 @@ Lastly, on the other side of the minute hand where the bamboo skewer was inserte
 
 ![Clock assembly 5](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%205.jpg)
 
+After the hour hand has been inserted, a retaining ring (blue arrow) was inserted as shown to prevent he hour hand from falling off. 
 
+Following that, the hour hand gear (yellow arrow) and a servo gear (green arrow) was assembled accordingly. Then, a screw is used to secure the servo gear to the servo motor. 
 
 *****
 
@@ -111,7 +115,13 @@ Lastly, on the other side of the minute hand where the bamboo skewer was inserte
 
 ![Clock assembly 6](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%206.jpg)
 
+In this final step, the minute hand (yellow arrow) was inserted into the hour hand shaft, followed by two washers (green arrow) and minute hand gear (blue arrow).
 
+It is important to note that, the before inserting the minute hand gear, the bamboo skewer should rotate freely with little friction whilst inserted in the hour hand shaft. This is because if there was too much friction, when the hour hand rotates, the minute hand will rotate along it which is undesired. 
+
+The purpose of the washer is to prevent the bamboo skewer from jiggling in and out the hour hand shaft.
+
+Lastly, a second servo gear (red arrow) is secured to the second servo motor with a screw as shown.  
 
 *****
 
