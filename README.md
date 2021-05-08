@@ -2,6 +2,12 @@
 
 This repository showcases how Singapore Polytechnic's kinematic clock was made.  
 
+Background info about the kinetic clock?
+
+Design followed from?
+
+## 3D Design
+
 ## Clock assembly
 Each clock is made up of: 
 
@@ -23,15 +29,19 @@ Each clock is made up of:
 
 ### Parts manufacturing
 
-3D print
+The components of each clock were created using 3D printers, laser cutters and vinyl stickers.
+
+#### 3D print
 
 ![3D printed part 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/3D%20printed%20part%201.jpeg)
 
-Laser cut
+![3D printed part 2 (clock body)]()
+
+#### Laser cut
 
 ![Laser cut parts](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Laser%20cut%20parts.jpeg)
 
-Vinyl sticker
+#### Vinyl sticker
 
 ![Vinyl sticker]()
 
@@ -55,7 +65,7 @@ The laser cut hour hand (blue arrow) was superglued to the tip of the hour hand 
 
 ![Minute hand assembly 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Minute%20hand%20assembly%201.jpeg)
 
-**xx**mm thick bamboo skewers were cut into lengths of 60mm.
+**XX**mm thick bamboo skewers were cut into lengths of 60mm.
 
 ![Minute hand assembly 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Minute%20hand%20assembly%202.jpg)
 
@@ -81,7 +91,7 @@ The colour theme of the clock was black and white - black board and clock hands,
 
 ![Clock assembly 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%202.jpg)
 
-Next, two continuous servo motors were installed onto the clock body as shown above and secured using 4 screws.
+Next, two continuous servo motors were installed onto the clock body as shown above and secured using 4 screws (blue arrows).
 
 *****
 
@@ -129,4 +139,9 @@ Lastly, a second servo gear (red arrow) is secured to the second servo motor wit
 
 ## Code
 
-## 
+## Final product
+
+![]()
+
+<a href="https://www.youtube.com/watch?v=qirl-tjCUZg"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a> 
