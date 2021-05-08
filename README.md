@@ -5,9 +5,7 @@ This repository showcases how Singapore Polytechnic's kinematic clock was made.
 ## Clock assembly
 Each clock is made up of: 
 
-![Clock parts](https://raw.githubusercontent.com/allen-michael-tan/Kinematic-clock/main/Images/Clock%20parts.jpg?token=ANP657FJK63W5N3AIHGQC6LAS2FGU)
-
-![](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20assembly%206.jpg)
+![Clock parts](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20parts.jpg)
 
 1. Clock body [1]
 2. Servo gear [2]
