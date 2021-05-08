@@ -137,11 +137,19 @@ Lastly, a second servo gear (red arrow) is secured to the second servo motor wit
 
 ## Board
 
-## Code
+## Programming
+
+### Wiring
+
+![Schematic diagram]()
+
+### Code
+
+### Calibration
 
 ## Final product
 
-![]()
+![Final product]()
 
 <a href="https://www.youtube.com/watch?v=qirl-tjCUZg"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a> 
