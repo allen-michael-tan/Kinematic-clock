@@ -141,7 +141,13 @@ Lastly, a second servo gear (red arrow) is secured to the second servo motor wit
 
 ### Wiring
 
-![Schematic diagram]()
+![Servo boards connection](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Servo%20boards%20connection.jpg)
+
+![Servos to board 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Servos%20to%20board%201.jpg)
+
+![Boards connection](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Boards%20connection.jpg)
+
+![Full schematic](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20schematic.jpg)
 
 ### Code
 
