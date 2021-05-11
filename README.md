@@ -141,13 +141,25 @@ Lastly, a second servo gear (red arrow) is secured to the second servo motor wit
 
 ### Wiring
 
+To control the 48 servo motors, three PWM servo motor drivers were used. Modifications to the two of the three drivers were done before they could all be daisy-chained together.
+
 ![Servo boards connection](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Servo%20boards%20connection.jpg)
+
+For board two, A0 was bridged; while for board three, A1 was bridged. The boards were then connected as shown.
 
 ![Servos to board 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Servos%20to%20board%201.jpg)
 
+Each driver board will control 16 individual motors, its wiring is as shown. The remaining motors were wired exactly the same way as this board.
+
 ![Boards connection](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Boards%20connection.jpg)
 
+A real time clock (RTC) module, DS3231 was used to accurately calculate the time displayed by the servo motors. 
+
+The wiring connection of all the different boards is as of above.
+
 ![Full schematic](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20schematic.jpg)
+
+This is the full schematic diagram of the kinematic clock.
 
 ### Code
 
