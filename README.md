@@ -51,7 +51,7 @@ Before each clocks were put together, some components of the clock had to be pre
 
 #### Coating of 3D printed parts
 
-![Spray coating]()
+![Spray coating](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Spray%20coating.jpeg)
 
 The material used for all 3D printed parts was PLA. This material has the tendency to disintigrate after a period of time, so a clear coat was applied on all the printed parts to increase their longevity. 
 
@@ -149,7 +149,15 @@ For board two, A0 was bridged; while for board three, A1 was bridged. The boards
 
 ![Servos to board 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Servos%20to%20board%201.jpg)
 
-Each driver board will control 16 individual motors, its wiring is as shown. The remaining motors were wired exactly the same way as this board.
+Each driver board will control 16 individual motors, its wiring to the board is as shown. The remaining motors were wired exactly the same way as this board.
+
+![Wiring of clock hands 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Wiring%20of%20clock%20hands%201.jpg)
+
+The servo motors of each individual minute and hour hands were wired to each resepctive boards with reference to the table above. "M" refers to minute hand while "H" refers to hour hand. 
+
+![Wiring of clock hands 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Wiring%20of%20clock%20hands%202.jpg)
+
+The above shows how the clocks are grouped from the front view. 
 
 ![Boards connection](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Boards%20connection.jpg)
 
@@ -161,9 +169,19 @@ The wiring connection of all the different boards is as of above.
 
 This is the full schematic diagram of the kinematic clock.
 
-### Code
+![Circuit board]()
+
+![Wiring of clocks]()
+
+As each motor drivers control 16 individual motos
 
 ### Calibration
+
+### Code
+
+#### RTC Code
+
+#### Full Code
 
 ## Final product
 
