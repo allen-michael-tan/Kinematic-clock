@@ -41,6 +41,8 @@ The components of each clock were created using 3D printers, laser cutters and v
 
 ![Laser cut parts](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Laser%20cut%20parts.jpeg)
 
+Flat parts such as clock hands and 
+
 #### Vinyl sticker
 
 ![Vinyl sticker]()
@@ -137,9 +139,13 @@ Lastly, a second servo gear (red arrow) is secured to the second servo motor wit
 
 ## Board
 
-## Programming
+The main board was made out of 15mm thick plywood. The parts were cut using a 2D CNC router. 
 
-### Wiring
+![CNC cutting 1]()
+
+![CNC cutting 2]()
+
+## Wiring
 
 To control the 48 servo motors, three PWM servo motor drivers were used. Modifications to the two of the three drivers were done before they could all be daisy-chained together.
 
@@ -171,9 +177,17 @@ This is the full schematic diagram of the kinematic clock.
 
 ![Circuit board]()
 
-![Wiring of clocks]()
+A circuit board was made to make the system modular should any replacement work is needed.
 
-As each motor drivers control 16 individual motos
+![Mounting of boards]()
+
+All the different circuit boards were adhered onto the back of the board with double-sided foam tape. 
+
+![Final wiring]()
+
+This is how the back of the clock looked like after everything is wired and assembled. 
+
+## Programming
 
 ### Calibration
 
