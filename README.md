@@ -202,4 +202,4 @@ This is how the back of the clock looked like after everything is wired and asse
 ![Final product]()
 
 <a href="https://www.youtube.com/watch?v=qirl-tjCUZg"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="Kinetic clock" width="240" height="180" border="10" /></a> 
+alt="Youtube video of kinetic clock" width="240" height="180" border="10" /></a> 
