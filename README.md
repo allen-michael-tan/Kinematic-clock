@@ -575,7 +575,7 @@ The code below is for the DS3231 RTC module.
 **_Note: For the actual clock, only the values for time is needed._**
 
 #### Full code
-		lmao
+		error :( 
 
 ## Final Product
 
