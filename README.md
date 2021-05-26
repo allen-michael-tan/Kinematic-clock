@@ -42,7 +42,7 @@ The above shows the assembly of the smaller boards onto the back of the main boa
 
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20cad%202.jpg" alt="Full cad 2">
 
-The above shows the respective front and back view of the full assembly of the kinematic clock in 3D CAD.
+The above shows the respective front and back views of the full assembly of the kinematic clock in 3D CAD.
 
 ## Clock Assembly
 Each clock is made up of: 
@@ -181,13 +181,15 @@ The main board was made out of 15mm thick plywood. The parts were cut using a 2D
 
 #### Step 1
 
+The file of the boards were exported as dxf files then inserted into the versa cut software for the 2D CNC router to be prepared and cut. 
+
 ![CNC cutting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg)
 
-CNC cutting
+2D router cutting the outline of the board.
 
 ![CNC cutting 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%202.jpeg)
 
-Chisel
+Once the cutting was finished, pieces of the board were removed from the raw material by chiseling them out. 
 
 ****
 
@@ -195,7 +197,7 @@ Chisel
 
 ![Sand + wood filler](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Sand%20%2B%20wood%20filler.jpeg)
 
-ds
+The board pieces were repeatedly sanded to achieve a smooth finish, wood filler was applied to damaged areas that requried repairs. After applying the wood filler, the board pieces were sanded once more.
 
 ****
 
@@ -203,7 +205,7 @@ ds
 
 ![Predrill](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Predrill.jpeg)
 
-ds
+Pilot holes for the mounting of the clocks were pre-drilled as shown.
 
 ****
 
@@ -211,15 +213,17 @@ ds
 
 ![Painting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Painting%201.jpeg)
 
+Once the surface of the board pieces were sanded smooth and all necessary pilot holes were drilled, all pieces were hand painted in black colour. 
+
 ![Painting 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Painting%202.jpeg)
 
-ds
+A total of three coats were applied, with light sanding being done in between each coat of paint. 
 
 ****
 
 #### Step 5
 
-then talk abt spray lacquer
+Once all the board pieces were painted black, two coats of clear lacquer was spray painted evenly on all the pieces to protect and give the wood a shiny finish. 
 
 ****
 
@@ -227,13 +231,15 @@ then talk abt spray lacquer
 
 ![Assembly 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Assembly%201.jpg)
 
-ds
+Once the lacquer had finished drying, it was time to assemble all the board pieces together. They are assembled as whown above. Wood screws were used to mount the smaller board pieces onto the main clock board. Furthermore, L brackets (blue arrows) were used to hold the smaller board pieces together. 
 
 ****
 
 #### Step 7
 
 ![Assembly 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Assembly%202.jpeg)
+
+Finally, all the clocks are screwed onto the back of the main board following the pre-drilled holes in step 3. 
 
 ## Wiring
 
