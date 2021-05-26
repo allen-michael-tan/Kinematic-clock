@@ -1,10 +1,8 @@
 # Kinematic Clock
 
-This repository showcases how Singapore Polytechnic's kinematic clock was made.  
+This repository showcases how Singapore Polytechnic MakerSpace's kinematic clock was made.  
 
-Background info about the kinetic clock?
-
-Design followed from?
+The design follows the Clockception instructables guide made by [madebymorgan](https://www.instructables.com/Clockception-How-to-Build-a-Clock-Made-From-Clocks/), where some aspects of the design were modified. 
 
 ## 3D Design
 
@@ -183,7 +181,7 @@ The main board was made out of 15mm thick plywood. The parts were cut using a 2D
 
 The file of the boards were exported as dxf files then inserted into the versa cut software for the 2D CNC router to be prepared and cut. 
 
-![CNC cutting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg)
+![CNC cutting 1]()https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg
 
 2D router cutting the outline of the board.
 
@@ -287,9 +285,253 @@ This is how the back of the clock looked like after everything is wired and asse
 
 ### Calibration
 
+Before the whole clock was coded, the position of the individual clocks was calibrated first to ensure they can accurately display the desired digit. 
+
+#### Position calibration
+
+		#include <Wire.h>
+		#include <Adafruit_PWMServoDriver.h>
+
+		Adafruit_PWMServoDriver board1 = Adafruit_PWMServoDriver(0x40);
+		Adafruit_PWMServoDriver board2 = Adafruit_PWMServoDriver(0x41);
+		Adafruit_PWMServoDriver board3 = Adafruit_PWMServoDriver(0x42);
+
+		#define SERVOMIN  544 // This is the 'minimum' pulse length count (out of 4096)
+		#define SERVOMAX  2400// This is the 'maximum' pulse length count (out of 4096)
+		//#define USMIN  600 // This is the rounded 'minimum' microsecond length based on the minimum pulse of 150
+		//#define USMAX  2400 // This is the rounded 'maximum' microsecond length based on the maximum pulse of 600
+		#define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
+
+		int number; // number command 
+
+		void setup() {  
+
+			Serial.begin(9600); 
+
+			board1.begin();  // Initialize servo control boards 
+			board2.begin();
+			board3.begin();
+			board1.setOscillatorFrequency(27000000);
+			board2.setOscillatorFrequency(27000000);
+			board3.setOscillatorFrequency(27000000);
+			board1.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
+			board2.setPWMFreq(SERVO_FREQ); 
+			board3.setPWMFreq(SERVO_FREQ); 
+
+			Serial.println("Ready for command");
+
+			yield();
+		}
+
+		void loop() {  
+
+			while(Serial.available()>1){ //see if a command has been sent
+  				number = Serial.parseInt(); //turn command into integer
+	  			Serial.print(number);
+  				Serial.println(" sent");
+  				angleToPulse(number);
+			}
+			delay(100);
+		}
+
+		void angleToPulse(int ang){
+   		
+			int pulse1 = map(ang,0, 180, SERVOMIN,SERVOMAX); // map angle of 0 to 180 to Servo min and Servo max 
+   			int pulse2 = int(float(pulse1) / 1000000 * SERVO_FREQ * 4096);
+   			Serial.print("Angle: ");Serial.print(ang);
+   			Serial.print(" pulse: ");Serial.println(pulse2);
+   			board3.setPWM(14, 0, pulse2);
+   			delay(100);
+		}
+
+The above was the code used to calibrate the position of the hour and minute hands of the clocks. The process is explained below:
+
+1. In the main void loop, modify the line of code for the lowest row first column clock hour hand (C1H per the naming convention). Replace the "3" with the board the hour hand is connected to, and replace the "14" with the pin number that hand is connected to, i.e. "board**3**.setPWM(**14**,0,pulse2);"
+2. Run the code.
+3. Check the serial monitor, it should read "Ready for command".
+3. Send "120" to the servo, the hour hand should go to its corresponding 120 position.
+4. Physically rotate the hour hand towards the 12 o'clock position.
+5. Once the adjustment has been made, send "80" to the servo, the hand should move in a clockwise direction.
+6. Switch between a command around "120" and the "80" command, and keep modfying the 120 number until a number command  that corresponds to 12 o'clock. Note the number in the [excel sheet](https://drive.google.com/file/d/1s7x2neyZYlE4V-eNKhpxrev4_VrFf_b3/view?usp=sharing) for the C1 hour CCW column.
+7. Switch between the 12 value and something around "80" until the number for the 3 o'clock position from the clockwise direction is achieved. Note the number in the table in the C1 hour CW column.
+8. Swith the 3 value and something around "40" number for the 6 o'clock position from the clockwise direction. Note the value in the table.
+9. The 7.5 o'clock position is calculated in the table, so this position does not need to be calibrated.
+10. Switch between the 6 value and something around "10" to get the value for the 9'oclock in the CCW direction, and note the value down.
+11. As the gears are not perfect, repeat steps 5 to 10 in the counter clockwise direction. This is because the values will likely be a little different and each hand will need to hit the aforementioned position from both counter and clockwise directions for the various numbers. Once this is done, the one hand of the clock has been calibrated.
+12. Modify the numbers in the "board**3**.setPWM(**14**,0,pulse2);" code for the C1 minute hand and repeat steps 2 to 11.
+13. Once that is done, repeat steps 2 to 12 for the remaining 23 clocks.
+
+**Note: In the table of the excel sheet, some cells are greyed out, this is because those particular positions will not be needed.**
+
+![Incomplete table](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Incomplete%20table.jpg)
+
+This was the table in the excel sheet before calibration.
+
+![Completed table](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Completed%20table.jpg)
+
+The completed table is shown above.
+
+#### Number calibration
+
+		#include <Wire.h>
+		#include <Adafruit_PWMServoDriver.h>
+
+		Adafruit_PWMServoDriver board1 = Adafruit_PWMServoDriver(0x40);
+		Adafruit_PWMServoDriver board2 = Adafruit_PWMServoDriver(0x41);
+		Adafruit_PWMServoDriver board3 = Adafruit_PWMServoDriver(0x42);
+
+		#define SERVOMIN  544 // This is the 'minimum' pulse length count (out of 4096)
+		#define SERVOMAX  2400// This is the 'maximum' pulse length count (out of 4096)
+		//#define USMIN  600 // This is the rounded 'minimum' microsecond length based on the minimum pulse of 150
+		//#define USMAX  2400 // This is the rounded 'maximum' microsecond length based on the maximum pulse of 600
+		#define SERVO_FREQ 50 // Analog servos run at ~50 Hz updates
+
+		int number; // number command 
+
+		void setup() {  
+
+			Serial.begin(9600); 
+
+			board1.begin();  // Initialize servo ccontrol boards 
+			board2.begin();
+			board3.begin();
+			board1.setOscillatorFrequency(27000000);
+			board2.setOscillatorFrequency(27000000);
+			board3.setOscillatorFrequency(27000000);
+			board1.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
+			board2.setPWMFreq(SERVO_FREQ); 
+			board3.setPWMFreq(SERVO_FREQ); 
+
+			Serial.println("Ready for command");
+
+			yield();
+		}
+
+		void loop() {  
+
+			while(Serial.available()>0){ //see if a command has been sent
+  				number = Serial.parseInt(); //turn command into integer
+  				Serial.print(number);
+ 				Serial.println(" sent");
+  				digit4(number);
+			}
+			delay(1000);
+		}
+
+		int angleToPulse(int ang){
+
+   			int pulse1 = map(ang,0, 180, SERVOMIN,SERVOMAX); // map angle of 0 to 180 to Servo min and Servo max 
+   			int pulse2 = int(float(pulse1) / 1000000 * SERVO_FREQ * 4096);
+		   	Serial.print("Angle: ");Serial.print(ang);
+   			Serial.print(" pulse: ");Serial.println(pulse2);
+   			return pulse2;
+		}
+
+		void digit4(int number){
+			if (number == 99) {
+				board3.setPWM(6, 0, angleToPulse(39));delay(200);
+				board3.setPWM(5, 0, angleToPulse(101));delay(200);
+			}
+			
+			else if (number == 1) {
+				board3.setPWM(11, 0, angleToPulse(40));delay(200);
+				board3.setPWM(9, 0, angleToPulse(23));delay(200);
+				board3.setPWM(8, 0, angleToPulse(17));delay(200);
+				board3.setPWM(7, 0, angleToPulse(33));delay(200);
+				board3.setPWM(6, 0, angleToPulse(24));delay(200);
+				board3.setPWM(5, 0, angleToPulse(18));delay(200);
+				board3.setPWM(4, 0, angleToPulse(18));delay(200);
+				board3.setPWM(14, 0, angleToPulse(42));delay(200);
+				board3.setPWM(10, 0, angleToPulse(102));delay(200);
+				board3.setPWM(11, 0, angleToPulse(101));delay(200);
+			}
+			
+			else if (number == 2) {
+				board3.setPWM(9, 0, angleToPulse(75));delay(200);
+				board3.setPWM(8, 0, angleToPulse(65));delay(200);
+				board3.setPWM(7, 0, angleToPulse(88));delay(200);
+				board3.setPWM(6, 0, angleToPulse(40));delay(200);
+				board3.setPWM(5, 0, angleToPulse(100));delay(200);
+				board3.setPWM(4, 0, angleToPulse(66));delay(200);
+				board3.setPWM(14, 0, angleToPulse(7));delay(200);
+				board3.setPWM(12, 0, angleToPulse(20));delay(200);
+				board3.setPWM(11, 0, angleToPulse(4));delay(200);
+				board3.setPWM(10, 0, angleToPulse(8));delay(200);
+			}
+
+			else if (number == 3) {
+				board3.setPWM(6, 0, angleToPulse(75));delay(200);
+				board3.setPWM(5, 0, angleToPulse(61));delay(200);
+				board3.setPWM(11, 0, angleToPulse(103));delay(200);
+			}	
+
+			else if (number == 4) {
+				board3.setPWM(11, 0, angleToPulse(40));delay(200);
+				board3.setPWM(9, 0, angleToPulse(40));delay(200);
+				board3.setPWM(8, 0, angleToPulse(32));delay(200);
+				board3.setPWM(7, 0, angleToPulse(119));delay(200);
+				board3.setPWM(5, 0, angleToPulse(18));delay(200);
+				board3.setPWM(4, 0, angleToPulse(18));delay(200);
+				board3.setPWM(14, 0, angleToPulse(42));delay(200);
+				board3.setPWM(12, 0, angleToPulse(50));delay(200);
+				board3.setPWM(10, 0, angleToPulse(102));delay(200);
+				board3.setPWM(11, 0, angleToPulse(101));delay(200);
+			}
+
+			else if (number == 5) {
+				board3.setPWM(9, 0, angleToPulse(76));delay(200);
+				board3.setPWM(5, 0, angleToPulse(65));delay(200);
+				board3.setPWM(4, 0, angleToPulse(66));delay(200);
+				board3.setPWM(15, 0, angleToPulse(10));delay(200);
+				board3.setPWM(14, 0, angleToPulse(8));delay(200);
+				board3.setPWM(13, 0, angleToPulse(50));delay(200);
+				board3.setPWM(12, 0, angleToPulse(18));delay(200);
+				board3.setPWM(10, 0, angleToPulse(7));delay(200);
+			}
+
+			else if (number == 6) {
+				board3.setPWM(6, 0, angleToPulse(40));delay(200);
+				board3.setPWM(5, 0, angleToPulse(100));delay(200);
+			}
+
+			else if (number == 7) {
+				board3.setPWM(11, 0, angleToPulse(40));delay(200);
+				board3.setPWM(8, 0, angleToPulse(65));delay(200);
+				board3.setPWM(7, 0, angleToPulse(33));delay(200);
+				board3.setPWM(6, 0, angleToPulse(23));delay(200);
+				board3.setPWM(5, 0, angleToPulse(18));delay(200);
+				board3.setPWM(4, 0, angleToPulse(18));delay(200);
+				board3.setPWM(15, 0, angleToPulse(48));delay(200);
+				board3.setPWM(13, 0, angleToPulse(119));delay(200);
+				board3.setPWM(12, 0, angleToPulse(50));delay(200);
+				board3.setPWM(10, 0, angleToPulse(102));delay(200);
+				board3.setPWM(11, 0, angleToPulse(101));delay(200);
+			}
+
+
+			else if (number == 8) {
+				board3.setPWM(8, 0, angleToPulse(32));delay(200);
+				board3.setPWM(7, 0, angleToPulse(118));delay(200);
+				board3.setPWM(6, 0, angleToPulse(75));delay(200);
+				board3.setPWM(5, 0, angleToPulse(100));delay(200);
+				board3.setPWM(4, 0, angleToPulse(66));delay(200);
+				board3.setPWM(12, 0, angleToPulse(20));delay(200);
+				board3.setPWM(10, 0, angleToPulse(7));delay(200);
+			}
+
+			else if (number == 9) {
+				board3.setPWM(6, 0, angleToPulse(76));delay(200);
+				board3.setPWM(5, 0, angleToPulse(61));delay(200);
+				board3.setPWM(12, 0, angleToPulse(48));delay(200);
+			}
+		}
+
 ### Code
 
-#### RTC code
+#### Real Time Clock (RTC) code
+
+The code below is for the DS3231 RTC module. 
+
 		#include <Wire.h>
 		#include <ds3231.h>
  
@@ -299,13 +541,13 @@ This is how the back of the clock looked like after everything is wired and asse
   		Serial.begin(9600);
   		Wire.begin();
   		DS3231_init(DS3231_CONTROL_INTCN);
-  		/*----------------------------------------------------------------------------
-  		In order to synchronise your clock module, insert timetable values below !
-  		----------------------------------------------------------------------------*/
+
+		/*To synchronise the clock, insert the appropriate values below.*/ 
+
   		t.hour=12; 
   		t.min=30;
   		t.sec=0;
-  		t.mday=25;
+  		t.mday=25; 
   		t.mon=12;
   		t.year=2019;
  
@@ -330,8 +572,10 @@ This is how the back of the clock looked like after everything is wired and asse
   		delay(1000);
 		}
 
+**_Note: For the actual clock, only the values for time is needed._**
+
 #### Full code
-		dfdf
+		lmao
 
 ## Final Product
 
