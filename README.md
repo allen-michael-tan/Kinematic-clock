@@ -10,7 +10,9 @@ Design followed from?
 
 Before fabrication, all components were modelled in Autodesk Inventor Professional. The .ipt files can be found [here](https://github.com/allen-michael-tan/Kinematic-clock/tree/main/Inventor%20files)
 
-![Clock cad 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20cad%201.jpg) 
+<img src="https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20cad%201.jpg" alt="Clock cad 2" width="50">
+
+
 ![Clock cad 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20cad%202.jpg)
 
 ## Clock assembly
