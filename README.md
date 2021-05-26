@@ -8,7 +8,7 @@ Design followed from?
 
 ## 3D Design
 
-Before fabrication, all components were modelled in Autodesk Inventor Professional. The .ipt files can be found [here](https://github.com/allen-michael-tan/Kinematic-clock/tree/main/Inventor%20files)
+Before fabrication, all components were modelled in Autodesk Inventor Professional. The inventor files can be found [here](https://github.com/allen-michael-tan/Kinematic-clock/tree/main/Inventor%20files)
 
 In this design, each digit will be represented using 6 individual smaller clocks, 24 clocks were needed to display 4 digits. The colour scheme used in the design is black and white.
 
@@ -20,31 +20,29 @@ The design of the individual clock bodies is shown above.
 
 ### Board design
 
+In addition to having a board to mount the clocks onto, 4 smaller boards are included in the design to raise the board forward, giving it a floating illusion when mounted onto a wall. 
+
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%201.jpg" alt="Board cad 1">
 
-Front view 
+This is the front view of the board. 
 
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%202.jpg" alt="Board cad 2">
 
-Back view
+This is the back view of the board.
 
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%203.jpg" alt="Board cad 3">
 
-Mounting boards
+These are the smaller boards attached to the back of the main board, they are offseted inwards to give the floating illusion when the board is mounted onto a wall.
 
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%204.jpg" alt="Board cad 4">
 
-Assembly
-
-The
+The above shows the assembly of the smaller boards onto the back of the main board. In the actual piece, they will be screwed into the main board using self tapping wood screws and L brackets. 
 
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20cad%201.jpg" alt="Full cad 1">
 
-Front
-
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20cad%202.jpg" alt="Full cad 2">
 
-Back
+The above shows the respective front and back view of the full assembly of the kinematic clock in 3D CAD.
 
 ## Clock Assembly
 Each clock is made up of: 
@@ -255,13 +253,13 @@ The servo motors of each individual minute and hour hands were wired to each res
 
 ![Wiring of clock hands 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Wiring%20of%20clock%20hands%202.jpg)
 
-The above shows how the clocks are grouped from the front view. 
+The above shows how the clocks are grouped from the front. 
 
 ![Boards connection](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Boards%20connection.jpg)
 
 A real time clock (RTC) module, DS3231 was used to accurately calculate the time displayed by the servo motors. 
 
-The wiring connection of all the different boards is as of above.
+The wiring connection of all the different boards is as of above. *(click image to see which ports need to be connected.)*
 
 ![Full schematic](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20schematic.jpg)
 
@@ -334,4 +332,4 @@ This is how the back of the clock looked like after everything is wired and asse
 ![Final product]()
 
 <a href="https://www.youtube.com/watch?v=qirl-tjCUZg"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="Youtube video of kinetic clock" width="240" height="180" border="10" /></a> 
+alt="Youtube video of kinetic cloc"k wdthi="240" height="180" border="10" /></a> 
