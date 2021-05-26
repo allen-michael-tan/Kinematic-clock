@@ -177,11 +177,11 @@ The purpose of the washer is to prevent the bamboo skewer from jiggling in and o
 
 Lastly, a second servo gear (red arrow) is secured to the second servo motor with a screw as shown.  
 
-*****
-
 ## Board
 
 The main board was made out of 15mm thick plywood. The parts were cut using a 2D CNC router. 
+
+#### Step 1
 
 ![CNC cutting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg)
 
@@ -190,6 +190,52 @@ CNC cutting
 ![CNC cutting 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%202.jpeg)
 
 Chisel
+
+****
+
+#### Step 2
+
+![Sand + wood filler](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Sand%20%2B%20wood%20filler.jpeg)
+
+ds
+
+****
+
+#### Step 3
+
+![Predrill](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Predrill.jpeg)
+
+ds
+
+****
+
+#### Step 4
+
+![Painting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Painting%201.jpeg)
+
+![Painting 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Painting%202.jpeg)
+
+ds
+
+****
+
+#### Step 5
+
+then talk abt spray lacquer
+
+****
+
+#### Step 6
+
+![Assembly 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Assembly%201.jpg)
+
+ds
+
+****
+
+#### Step 7
+
+![Assembly 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Assembly%202.jpeg)
 
 ## Wiring
 
@@ -221,7 +267,7 @@ The wiring connection of all the different boards is as of above.
 
 This is the full schematic diagram of the kinematic clock.
 
-![Circuit board]()
+![Circuit board](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Circuit%20board.jpeg)
 
 A circuit board was made to make the system modular should any replacement work is needed.
 
@@ -240,7 +286,45 @@ This is how the back of the clock looked like after everything is wired and asse
 ### Code
 
 #### RTC code
-		dfdf
+		#include <Wire.h>
+		#include <ds3231.h>
+ 
+		struct ts t; 
+ 
+		void setup() {
+  		Serial.begin(9600);
+  		Wire.begin();
+  		DS3231_init(DS3231_CONTROL_INTCN);
+  		/*----------------------------------------------------------------------------
+  		In order to synchronise your clock module, insert timetable values below !
+  		----------------------------------------------------------------------------*/
+  		t.hour=12; 
+  		t.min=30;
+  		t.sec=0;
+  		t.mday=25;
+  		t.mon=12;
+  		t.year=2019;
+ 
+  		DS3231_set(t); 
+		}
+ 
+		void loop() {
+  		DS3231_get(&t);
+  		Serial.print("Date : ");
+  		Serial.print(t.mday);
+  		Serial.print("/");
+  		Serial.print(t.mon);
+  		Serial.print("/");
+  		Serial.print(t.year);
+  		Serial.print("\t Hour : ");
+  		Serial.print(t.hour);
+  		Serial.print(":");
+  		Serial.print(t.min);
+  		Serial.print(".");
+  		Serial.println(t.sec);
+ 
+  		delay(1000);
+		}
 
 #### Full code
 		dfdf
