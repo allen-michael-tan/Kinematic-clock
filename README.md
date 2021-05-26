@@ -1,4 +1,4 @@
-# Kinematic clock
+# Kinematic Clock
 
 This repository showcases how Singapore Polytechnic's kinematic clock was made.  
 
@@ -10,10 +10,43 @@ Design followed from?
 
 Before fabrication, all components were modelled in Autodesk Inventor Professional. The .ipt files can be found [here](https://github.com/allen-michael-tan/Kinematic-clock/tree/main/Inventor%20files)
 
+In this design, each digit will be represented using 6 individual smaller clocks, 24 clocks were needed to display 4 digits. The colour scheme used in the design is black and white.
+
+### Clock design
+
 <img src="https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20cad%201.jpg" alt="Clock cad 1" width="360"> <img src="https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20cad%202.jpg" alt="Clock cad 2" width="360" height="430.66">
 
+The design of the individual clock bodies is shown above. 
 
-## Clock assembly
+### Board design
+
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%201.jpg" alt="Board cad 1">
+
+Front view 
+
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%202.jpg" alt="Board cad 2">
+
+Back view
+
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%203.jpg" alt="Board cad 3">
+
+Mounting boards
+
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Board%20cad%204.jpg" alt="Board cad 4">
+
+Assembly
+
+The
+
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20cad%201.jpg" alt="Full cad 1">
+
+Front
+
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Full%20cad%202.jpg" alt="Full cad 2">
+
+Back
+
+## Clock Assembly
 Each clock is made up of: 
 
 ![Clock parts](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Clock%20parts.jpg)
@@ -42,15 +75,19 @@ The components of each clock were created using 3D printers, laser cutters and v
 
 ![3D printed part 2 (clock body)]()
 
+Majority of the clock parts were 3D printed with PLA material.
+
 #### Laser cut
 
 ![Laser cut parts](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Laser%20cut%20parts.jpeg)
 
-Flat parts such as clock hands and 
+Flat parts such as clock hands and hour retaining ring were made with laser cut 2mm black coloured acrylic. 
 
 #### Vinyl sticker
 
 ![Vinyl sticker]()
+
+In order to allow for uniformity across all the clock faces, white vinyl stickers were cut and applied onto each clock face. 
 
 ### Pre-assembly preparation
 
@@ -72,7 +109,7 @@ The laser cut hour hand (blue arrow) was superglued to the tip of the hour hand 
 
 ![Minute hand assembly 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Minute%20hand%20assembly%201.jpeg)
 
-**XX**mm thick bamboo skewers were cut into lengths of 60mm.
+3mm thick bamboo skewers were cut into lengths of 60mm.
 
 ![Minute hand assembly 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Minute%20hand%20assembly%202.jpg)
 
@@ -146,9 +183,13 @@ Lastly, a second servo gear (red arrow) is secured to the second servo motor wit
 
 The main board was made out of 15mm thick plywood. The parts were cut using a 2D CNC router. 
 
-![CNC cutting 1]()
+![CNC cutting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg)
 
-![CNC cutting 2]()
+CNC cutting
+
+![CNC cutting 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%202.jpeg)
+
+Chisel
 
 ## Wiring
 
@@ -198,11 +239,13 @@ This is how the back of the clock looked like after everything is wired and asse
 
 ### Code
 
-#### RTC Code
+#### RTC code
+		dfdf
 
-#### Full Code
+#### Full code
+		dfdf
 
-## Final product
+## Final Product
 
 ![Final product]()
 
