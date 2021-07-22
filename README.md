@@ -347,26 +347,25 @@ Before writing the full code of the clock, the position of each individual hands
 	   int pulse2 = int(float(pulse1) / 1000000 * SERVO_FREQ * 4096);
 	   Serial.print("Angle: ");Serial.print(ang);
 	   Serial.print(" pulse: ");Serial.println(pulse2);
-	   board1.setPWM(1 , 0, pulse2); // Change board number and servo number (first number in the bracket) based on which servo number and its corresponding board is being used.
+	   board1.setPWM(0 , 0, pulse2); // Change board number and servo number (first number in the bracket) based on which servo number and its corresponding board is being used.
 	   delay(100);
 	}
 
 The above was the code used to calibrate the position of the hour and minute hands of the clocks. The process is explained below:
 
-1. In the main void loop, modify the line of code for the lowest row first column clock hour hand (C1H per the naming convention). Replace the "3" with the board the hour hand is connected to, and replace the "14" with the pin number that hand is connected to, i.e. "board**3**.setPWM(**14**,0,pulse2);"
-2. Run the code.
-3. Check the serial monitor, it should read "Ready for command".
-3. Send "120" to the servo, the hour hand should go to its corresponding 120 position.
-4. Physically rotate the hour hand towards the 12 o'clock position.
-5. Once the adjustment has been made, send "80" to the servo, the hand should move in a clockwise direction.
-6. Switch between a command around "120" and the "80" command, and keep modfying the 120 number until a number command  that corresponds to 12 o'clock. Note the number in the [excel sheet](https://drive.google.com/file/d/1s7x2neyZYlE4V-eNKhpxrev4_VrFf_b3/view?usp=sharing) for the C1 hour CCW column.
-7. Switch between the 12 value and something around "80" until the number for the 3 o'clock position from the clockwise direction is achieved. Note the number in the table in the C1 hour CW column.
-8. Swith the 3 value and something around "40" number for the 6 o'clock position from the clockwise direction. Note the value in the table.
-9. The 7.5 o'clock position is calculated in the table, so this position does not need to be calibrated.
-10. Switch between the 6 value and something around "10" to get the value for the 9'oclock in the CCW direction, and note the value down.
-11. As the gears are not perfect, repeat steps 5 to 10 in the counter clockwise direction. This is because the values will likely be a little different and each hand will need to hit the aforementioned position from both counter and clockwise directions for the various numbers. Once this is done, the one hand of the clock has been calibrated.
-12. Modify the numbers in the "board**3**.setPWM(**14**,0,pulse2);" code for the C1 minute hand and repeat steps 2 to 11.
-13. Once that is done, repeat steps 2 to 12 for the remaining 23 clocks.
+1. In the main void loop, the line - "board1.setPWM(0, 0, pulse2)" was modified constantly based on which clock's clock hand was being calibrated at the time. For example, if board two's (servo driver board) third servo is being calibrated, the line is as such - "board**2**.setPWM(**2**, 0, pulse2)".
+2. The code was uploaded and run.
+3. In the serial monitor, "Ready for command" was shown.
+4. When a value of "120" was sent to the servo, the hour hand moved to its corresponding 120 position.
+5. The hour hand was physically rotated towards the 12 o'clock position without rotating the servo motor.
+6. After the hour hand was adjusted, a value of "80" was sent to the servo, where the hand moved in a clockwise direction.
+6. Values between "120" and "80" were sent to the servo until the hour hand corresponded to 12 o'clock position accurately. That value was noted down in the [excel sheet](https://drive.google.com/file/d/1sLUSswgiBBg3gsoc3c7aR3SdEHQj8qRx/view?usp=sharing) in the C2 hour CCW column.
+7. For the 3 o'clock position, values around "80" were modified until the hand correspnded to the 3 o'clock position from the clockwise direction accurately. That value was noted in the table's C2 hour CW column.
+8. Similarly, for the 6 and 9 o'clock positions, values around "40" and "10" were sent to the servo until the values of the desired positions for both timings were obtained and noted in the C2 hour CW column for 6 and 9 o'clock respectively.
+9. The 7.5 o'clock position was automatically calculated once the 6 and 9 o'clock positions were obtained.
+10. Since all the 3D printed gears were not perfect, steps 5 to 10 were repeated in the counter clockwise direction.
+11. Once the first hour hand was calibrated, steps 1 to 10 were repeated for the next minute hand.
+12. Finally steps 1 - 11 were repeated for the remaining 23 clocks.  
 
 **Note: In the table of the excel sheet, some cells are greyed out, this is because those particular positions will not be needed.**
 
@@ -859,6 +858,10 @@ The completed table is shown above.
 	  }
 	}
 
+With the position of each clock hands calibrated, the clock could theorectically be used right away, however further fine adjustments to the servo motors were required to ensure the digits are as accurate as possible.
+
+The code above is used to calibrate the position of the hour and minute hands of the clocks to accurately display the desired digits. The process is explained below:
+
 ### Code
 
 #### Real Time Clock (RTC) code
@@ -886,21 +889,17 @@ The code below is for the DS3231 RTC module.
 	  if (rtc.lostPower()) {
 	    Serial.println("RTC lost power, lets set the time!");
 	  
-	    // Comment out below lines once you set the date & time.
-	    // Following line sets the RTC to the date & time this sketch was compiled
+	    // Comment out below lines once you set the date & time. Following line sets the RTC to the date & time this sketch was compiled
 	    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 	  
-	    // Following line sets the RTC with an explicit date & time
-	    // for example to set July 8 2021 at 13:30 you would call:
+	    // Following line sets the RTC with an explicit date & time, for example to set July 8 2021 at 13:30 you would call:
 	    // rtc.adjust(DateTime(2021, 7, 8, 13, 30, 0));
 	  }
 	
-	  // When time needs to be re-set on a previously configured device, the
-	  // following line sets the RTC to the date & time this sketch was compiled
-	  // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-	  // This line sets the RTC with an explicit date & time, for example to set
-	  // July 8, 2021 at 13: you would call:
-	  // rtc.adjust(DateTime(2021, 7, 8, 13, 28, 0));
+	  // When time needs to be re-set on a previously configured device, the following line sets the RTC to the date & time this sketch was compiled
+	  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+	  // This line sets the RTC with an explicit date & time, for example to set July 8, 2021 at 13: you would call:
+	  rtc.adjust(DateTime(2021, 7, 8, 13, 28, 0));
 	}
 	
 	void printTime() {
@@ -929,6 +928,8 @@ The code below is for the DS3231 RTC module.
 	void loop () {
 	    printTime();
 	}
+
+Before uploading the final code, this code was used to synchronise the time of the RTC to the current time. 
 
 #### Full code
 
