@@ -69,7 +69,7 @@ The components of each clock were created using 3D printers, laser cutters and v
 
 ![3D printed part 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/3D%20printed%20part%201.jpeg)
 
-![3D printed part 2 (clock body)]()
+![3D printed part 2](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/3D%20printed%20part%202.jpeg)
 
 Majority of the clock parts were 3D printed with PLA material.
 
