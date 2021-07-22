@@ -181,7 +181,7 @@ The main board was made out of 15mm thick plywood. The parts were cut using a 2D
 
 The file of the boards were exported as dxf files then inserted into the versa cut software for the 2D CNC router to be prepared and cut. 
 
-![CNC cutting 1]()https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg
+![CNC cutting 1](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/CNC%20cutting%201.jpeg)
 
 2D router cutting the outline of the board.
 
@@ -239,6 +239,14 @@ Once the lacquer had finished drying, it was time to assemble all the board piec
 
 Finally, all the clocks are screwed onto the back of the main board following the pre-drilled holes in step 3. 
 
+****
+
+#### Step 8
+
+![Acrylic cover](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Acrylic%20cover.jpg)
+
+To protect the front side of clock, a 3mm clear piece of acrylic sheet was screwed onto the clock as a cover. 
+
 ## Wiring
 
 To control the 48 servo motors, three PWM servo motor drivers were used. Modifications to the two of the three drivers were done before they could all be daisy-chained together.
@@ -269,23 +277,23 @@ The wiring connection of all the different boards is as of above. *(click image 
 
 This is the full schematic diagram of the kinematic clock.
 
-![Cable clip]()
+![Cable clip](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Cable%20clip.jpg)
 
 For cable management, cable organisers shown above was designed and 3D printed. It has a hole in the flat side where a screw can go through and secure it to the wood.
 
-![Using cable clip]()
+![Using cable clip](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Using%20cable%20clip.jpg)
 
 This was how the cable organisers were used.
 
-![Circuit board]()
+![Circuit board](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Circuit%20board.jpeg)
 
 A circuit board was made to make the system modular should any replacement work is needed.
 
-![Mounting of boards]()
+![Mounting of boards](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Mounting%20of%20boards.jpeg)
 
 All the different circuit boards were adhered onto the back of the board with double-sided foam tape. 
 
-![Final wiring]()
+![Final wiring](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Final%20wiring.jpeg)
 
 This is how the back of the clock looked like after everything is wired and assembled. 
 
@@ -860,13 +868,26 @@ The completed table is shown above.
 
 With the position of each clock hands calibrated, the clock could theorectically be used right away, however further fine adjustments to the servo motors were required to ensure the digits are as accurate as possible.
 
-The code above is used to calibrate the position of the hour and minute hands of the clocks to accurately display the desired digits. The process is explained below:
+The code above is used to further calibrate the position of the hour and minute hands of the clocks to accurately display the desired digits. The process is explained below:
+
+1. In the main void loop, the line - "digit2(number)" was changed between "1" to "4" based on which digit was being calibrated. 
+2. For digits 2 and 4 of the clock, numbers "0" to "9" was required to be calibrated, while digit 1 only needed "0" to "2", and finally digit 3 needed "0" to "5".
+3. For example, to calibrate the number "1" of the digit 1, the value of angle for the motors involved to make up that digit was changed slightly until the general shape of the number is as close to what a digital clock would display.
+4. The process was repeated for all the remaining numbers and digits.
+
+![Before number cali](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Before%20number%20cali.jpeg)
+
+![After number cali](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/After%20number%20cali.jpeg)
+
+Here is a before (top) and after (bottom) picture of the calibration of the number six.
 
 ### Code
 
+All the codes used in this project can be found [here](https://github.com/allen-michael-tan/Kinematic-clock/tree/main/code).
+
 #### Real Time Clock (RTC) code
 
-The code below is for the DS3231 RTC module. 
+The RTC module used is called DS3231, the code is as of below. 
 
 	#include <Wire.h>
 	#include "RTClib.h"
@@ -1533,7 +1554,11 @@ The code below is the final code used by the clock.
 
 ## Final Product
 
-![Final product]()
+Once the full code has been uploaded, the board was mounted onto the wall and plugged into the wall. 
+
+![Final product](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Final%20product.jpeg)
 
 <a href="https://www.youtube.com/watch?v=qirl-tjCUZg"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
 alt="Youtube video of kinetic cloc"k wdthi="240" height="180" border="10" /></a> 
+
+Here is a timelapse of the clock in action!
