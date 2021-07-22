@@ -81,7 +81,7 @@ Flat parts such as clock hands and hour retaining ring were made with laser cut 
 
 #### Vinyl sticker
 
-![Vinyl sticker]()
+![Vinyl sticker](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Vinyl%20sticker.jpeg)
 
 In order to allow for uniformity across all the clock faces, white vinyl stickers were cut and applied onto each clock face. 
 
