@@ -877,10 +877,6 @@ The code above is used to further calibrate the position of the hour and minute 
 
 <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Before%20number%20cali.jpeg" width = "400" alt="Before number cali"> <img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/After%20number%20cali.jpeg" width = "400" alt="After number cali">
 
-![Before number cali](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Before%20number%20cali.jpeg)
-
-![After number cali](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/After%20number%20cali.jpeg)
-
 Here is a before (top) and after (bottom) picture of the calibration of the number six.
 
 ### Code
@@ -1562,4 +1558,4 @@ Once the full code has been uploaded, the board was mounted onto the wall and pl
 
 Here is a timelapse of the clock in action!
 
-[![Video](https://img.youtube.com/vi/6yjyvjCh0M8/.jpg)](https://youtu.be/6yjyvjCh0M8)
+[![Timelapse video](https://img.youtube.com/vi/6yjyvjCh0M8.jpg)](https://youtu.be/6yjyvjCh0M8)
