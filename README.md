@@ -875,6 +875,9 @@ The code above is used to further calibrate the position of the hour and minute 
 3. For example, to calibrate the number "1" of the digit 1, the value of angle for the motors involved to make up that digit was changed slightly until the general shape of the number is as close to what a digital clock would display.
 4. The process was repeated for all the remaining numbers and digits.
 
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Before%20number%20cali.jpeg" style = "width:400px;" alt="Before number cali">
+<img src = "https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/After%20number%20cali.jpeg" style = "width:400px;" alt="After number cali">
+
 ![Before number cali](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Before%20number%20cali.jpeg)
 
 ![After number cali](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/After%20number%20cali.jpeg)
@@ -1558,7 +1561,6 @@ Once the full code has been uploaded, the board was mounted onto the wall and pl
 
 ![Final product](https://github.com/allen-michael-tan/Kinematic-clock/blob/main/Images/Final%20product.jpeg)
 
-<a href="https://www.youtube.com/watch?v=qirl-tjCUZg"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="Youtube video of kinetic cloc"k wdthi="240" height="180" border="10" /></a> 
-
 Here is a timelapse of the clock in action!
+
+[![Video](https://img.youtube.com/vi/<6yjyvjCh0M8>/maxresdefault.jpg)](https://youtu.be/6yjyvjCh0M8)
