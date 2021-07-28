@@ -1559,3 +1559,10 @@ Once the full code has been uploaded, the board was mounted onto the wall and pl
 Here is a timelapse of the clock in action!
 
 [![Timelapse video](https://img.youtube.com/vi/6yjyvjCh0M8.jpg)](https://youtu.be/6yjyvjCh0M8)
+
+https://youtube.com/embed/w3jLJU7DT5E
+
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+
+https://user-images.githubusercontent.com/58986949/115314310-805b2780-a1a7-11eb-8558-648a367ea231.mp4
+
