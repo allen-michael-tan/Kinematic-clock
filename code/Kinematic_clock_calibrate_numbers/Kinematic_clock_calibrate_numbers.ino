@@ -38,7 +38,7 @@ while(Serial.available()>0){  // See if a command has been sent
   number = Serial.parseInt(); // Turn command into integer
   Serial.print(number);
   Serial.println(" sent");
-  digit2(number); // Change between digit1 - digit4, depending on which digit is being calibrated
+  digit4(number); // Change between digit1 - digit4, depending on which digit is being calibrated
 }
 delay(1000);
 }
@@ -335,17 +335,17 @@ void digit3(int number) {
 /*4th digit*/
 
 void digit4(int number) {
-  if (number == 0) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200); 
+  if (number ==11) {
+    board3.setPWM(9, 0, angleToPulse(80));delay(200);
     board3.setPWM(8, 0, angleToPulse(54));delay(200); 
     board3.setPWM(7, 0, angleToPulse(116));delay(200);
     board3.setPWM(6, 0, angleToPulse(54));delay(200); 
     board3.setPWM(5, 0, angleToPulse(115));delay(200);
     board3.setPWM(4, 0, angleToPulse(89));delay(200); 
-    board3.setPWM(15, 0, angleToPulse(23));delay(200);
-    board3.setPWM(14, 0, angleToPulse(52.5));delay(200); 
+    board3.setPWM(15, 0, angleToPulse(20));delay(200);
+    board3.setPWM(14, 0, angleToPulse(53));delay(200); 
     board3.setPWM(13, 0, angleToPulse(121));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(59));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(56));delay(200);
     board3.setPWM(11, 0, angleToPulse(117));delay(200); 
     board3.setPWM(10, 0, angleToPulse(21));delay(200); 
   }
@@ -357,37 +357,37 @@ void digit4(int number) {
     board3.setPWM(5, 0, angleToPulse(32));delay(200);   
     board3.setPWM(4, 0, angleToPulse(33));delay(200);
     board3.setPWM(15, 0, angleToPulse(54));delay(200); 
-    board3.setPWM(14, 0, angleToPulse(51));delay(200); 
+    board3.setPWM(14, 0, angleToPulse(52));delay(200); 
     board3.setPWM(13, 0, angleToPulse(121));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(60));delay(200); 
-    board3.setPWM(11, 0, angleToPulse(118));delay(200); 
-    board3.setPWM(10, 0, angleToPulse(119));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(56));delay(200); 
+    board3.setPWM(11, 0, angleToPulse(119));delay(200); 
+    board3.setPWM(10, 0, angleToPulse(120));delay(200); 
   }
   else if (number == 2) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
-    board3.setPWM(8, 0, angleToPulse(87.5));delay(200);
+    board3.setPWM(9, 0, angleToPulse(78));delay(200); 
+    board3.setPWM(8, 0, angleToPulse(88));delay(200);
     board3.setPWM(7, 0, angleToPulse(82));delay(200); 
     board3.setPWM(6, 0, angleToPulse(50));delay(200);
     board3.setPWM(5, 0, angleToPulse(116));delay(200); 
     board3.setPWM(4, 0, angleToPulse(88));delay(200); 
-    board3.setPWM(15, 0, angleToPulse(24));delay(200); 
-    board3.setPWM(14, 0, angleToPulse(53));delay(200); 
+    board3.setPWM(15, 0, angleToPulse(22));delay(200); 
+    board3.setPWM(14, 0, angleToPulse(54));delay(200);
     board3.setPWM(13, 0, angleToPulse(122));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(27));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(23));delay(200); 
     board3.setPWM(11, 0, angleToPulse(20));delay(200); 
     board3.setPWM(10, 0, angleToPulse(22));delay(200); 
   }
   else if (number == 3) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
-    board3.setPWM(8, 0, angleToPulse(87.5));delay(200);
+    board3.setPWM(9, 0, angleToPulse(78));delay(200);
+    board3.setPWM(8, 0, angleToPulse(88));delay(200); 
     board3.setPWM(7, 0, angleToPulse(82));delay(200);
     board3.setPWM(6, 0, angleToPulse(86));delay(200); 
     board3.setPWM(5, 0, angleToPulse(85));delay(200);
     board3.setPWM(4, 0, angleToPulse(88));delay(200);
-    board3.setPWM(15, 0, angleToPulse(23));delay(200); 
-    board3.setPWM(14, 0, angleToPulse(53));delay(200);
+    board3.setPWM(15, 0, angleToPulse(22));delay(200); 
+    board3.setPWM(14, 0, angleToPulse(54));delay(200);
     board3.setPWM(13, 0, angleToPulse(122));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(27));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(23));delay(200); 
     board3.setPWM(11, 0, angleToPulse(118));delay(200);
     board3.setPWM(10, 0, angleToPulse(21));delay(200);
   }
@@ -399,79 +399,79 @@ void digit4(int number) {
     board3.setPWM(5, 0, angleToPulse(32));delay(200);
     board3.setPWM(4, 0, angleToPulse(33));delay(200);
     board3.setPWM(15, 0, angleToPulse(54));delay(200); 
-    board3.setPWM(14, 0, angleToPulse(51));delay(200); 
+    board3.setPWM(14, 0, angleToPulse(52));delay(200);
     board3.setPWM(13, 0, angleToPulse(121));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(60));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(56));delay(200); 
     board3.setPWM(11, 0, angleToPulse(118));delay(200); 
     board3.setPWM(10, 0, angleToPulse(119));delay(200); 
   }
   else if (number == 5) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
+    board3.setPWM(9, 0, angleToPulse(80));delay(200);
     board3.setPWM(8, 0, angleToPulse(54));delay(200);
-    board3.setPWM(7, 0, angleToPulse(116));delay(200);
+    board3.setPWM(7, 0, angleToPulse(116));delay(200); 
     board3.setPWM(6, 0, angleToPulse(87));delay(200); 
     board3.setPWM(5, 0, angleToPulse(85));delay(200);
     board3.setPWM(4, 0, angleToPulse(88));delay(200); 
-    board3.setPWM(15, 0, angleToPulse(24));delay(200); 
+    board3.setPWM(15, 0, angleToPulse(21));delay(200);
     board3.setPWM(14, 0, angleToPulse(21));delay(200); 
     board3.setPWM(13, 0, angleToPulse(52));delay(200);
-    board3.setPWM(12, 0, angleToPulse(24));delay(200);  
+    board3.setPWM(12, 0, angleToPulse(22));delay(200);
     board3.setPWM(11, 0, angleToPulse(118));delay(200); 
     board3.setPWM(10, 0, angleToPulse(22));delay(200);
   }
   else if (number == 6) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
+    board3.setPWM(9, 0, angleToPulse(80));delay(200);
     board3.setPWM(8, 0, angleToPulse(54));delay(200);
-    board3.setPWM(7, 0, angleToPulse(116));delay(200); 
+    board3.setPWM(7, 0, angleToPulse(116));delay(200);
     board3.setPWM(6, 0, angleToPulse(54));delay(200); 
-    board3.setPWM(5, 0, angleToPulse(114));delay(200); 
+    board3.setPWM(5, 0, angleToPulse(115));delay(200); 
     board3.setPWM(4, 0, angleToPulse(89));delay(200); 
-    board3.setPWM(15, 0, angleToPulse(23));delay(200);
+    board3.setPWM(15, 0, angleToPulse(21));delay(200);
     board3.setPWM(14, 0, angleToPulse(21));delay(200);
     board3.setPWM(13, 0, angleToPulse(52));delay(200);
-    board3.setPWM(12, 0, angleToPulse(24));delay(200);
+    board3.setPWM(12, 0, angleToPulse(22));delay(200);
     board3.setPWM(11, 0, angleToPulse(118));delay(200);
     board3.setPWM(10, 0, angleToPulse(22));delay(200);
   }
   else if (number == 7) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
+    board3.setPWM(9, 0, angleToPulse(80));delay(200); 
     board3.setPWM(8, 0, angleToPulse(87.5));delay(200);
     board3.setPWM(7, 0, angleToPulse(36.5));delay(200); 
     board3.setPWM(6, 0, angleToPulse(33.5));delay(200); 
     board3.setPWM(5, 0, angleToPulse(32));delay(200); 
     board3.setPWM(4, 0, angleToPulse(33));delay(200);
-    board3.setPWM(15, 0, angleToPulse(243));delay(200); 
-    board3.setPWM(14, 0, angleToPulse(52.5));delay(200);
+    board3.setPWM(15, 0, angleToPulse(20));delay(200); 
+    board3.setPWM(14, 0, angleToPulse(53));delay(200); 
     board3.setPWM(13, 0, angleToPulse(121));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(59));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(57));delay(200); 
     board3.setPWM(11, 0, angleToPulse(118));delay(200);
     board3.setPWM(10, 0, angleToPulse(119));delay(200);
   }
   else if (number == 8) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
+    board3.setPWM(9, 0, angleToPulse(80));delay(200);
     board3.setPWM(8, 0, angleToPulse(54));delay(200); 
-    board3.setPWM(7, 0, angleToPulse(116));delay(200);
-    board3.setPWM(6, 0, angleToPulse(86.5));delay(200);
+    board3.setPWM(7, 0, angleToPulse(116));delay(200); 
+    board3.setPWM(6, 0, angleToPulse(87));delay(200); 
     board3.setPWM(5, 0, angleToPulse(117));delay(200);
     board3.setPWM(4, 0, angleToPulse(88));delay(200); 
-    board3.setPWM(15, 0, angleToPulse(23));delay(200);
-    board3.setPWM(14, 0, angleToPulse(52.5));delay(200);
-    board3.setPWM(13, 0, angleToPulse(121));delay(200); 
-    board3.setPWM(12, 0, angleToPulse(28));delay(200);
+    board3.setPWM(15, 0, angleToPulse(20));delay(200);
+    board3.setPWM(14, 0, angleToPulse(53));delay(200);
+    board3.setPWM(13, 0, angleToPulse(122));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(23));delay(200); 
     board3.setPWM(11, 0, angleToPulse(117));delay(200);
     board3.setPWM(10, 0, angleToPulse(21));delay(200); 
   }
   else if (number == 9) {
-    board3.setPWM(9, 0, angleToPulse(77));delay(200);
+    board3.setPWM(9, 0, angleToPulse(80));delay(200);
     board3.setPWM(8, 0, angleToPulse(54));delay(200); 
     board3.setPWM(7, 0, angleToPulse(116));delay(200); 
-    board3.setPWM(6, 0, angleToPulse(86.5));delay(200); 
+    board3.setPWM(6, 0, angleToPulse(87));delay(200); 
     board3.setPWM(5, 0, angleToPulse(85));delay(200); 
     board3.setPWM(4, 0, angleToPulse(88));delay(200);  
-    board3.setPWM(15, 0, angleToPulse(23));delay(200); 
-    board3.setPWM(14, 0, angleToPulse(52.5));delay(200); 
+    board3.setPWM(15, 0, angleToPulse(20));delay(200); 
+    board3.setPWM(14, 0, angleToPulse(53));delay(200); 
     board3.setPWM(13, 0, angleToPulse(121));delay(200);
-    board3.setPWM(12, 0, angleToPulse(59));delay(200); 
+    board3.setPWM(12, 0, angleToPulse(56));delay(200); 
     board3.setPWM(11, 0, angleToPulse(117));delay(200); 
     board3.setPWM(10, 0, angleToPulse(21));delay(200); 
   }
